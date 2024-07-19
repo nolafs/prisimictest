@@ -24,5 +24,7 @@ export default async function Page() {
   const client = createClient();
   const page = await client.getByUID("page", "home").catch(() => notFound());
 
+  console.log(page.data.slices)
+
   return <SliceZone slices={page.data.slices} components={components} />;
 }
